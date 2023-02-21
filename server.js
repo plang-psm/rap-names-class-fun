@@ -23,16 +23,14 @@ const rappers = {
   },
 };
 
-app.use(express.static('public'));
-
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
 
-app.get('/api/:rapperName', (req, res) => {
-    const rappersName = req.params.rapperName.toLowerCase()
-    if(rappers[rappersName]) {
-        res.json(rappers[rappersName])
+app.get('/api/:name', (req, res) => {
+    const rapperName = req.params.name.toLowerCase()
+    if(rappers[rapperName]) {
+        res.json(rappers[rapperName])
     } else {
         res.json(rappers['dylan'])
     }
