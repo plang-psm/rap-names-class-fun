@@ -23,7 +23,7 @@ const rappers = {
   },
 };
 
-app.use('/js', express.static('js'));
+app.use('/public', express.static('public'));
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
